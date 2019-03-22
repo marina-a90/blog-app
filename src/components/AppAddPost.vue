@@ -5,7 +5,8 @@
             <div>Title: <input type="text" v-model="post.title" placeholder="title"/></div>
             <div>Text: <input type="text" v-model="post.text" placeholder="text"/></div>
 
-            <div><submit @click="addPost">Add post</submit></div>
+            <div><button @click="addPost">Add post</button></div>
+            <div><button @click.prevent="resetForm">Reset</button></div>
         </form>
     </div>
 </template>
@@ -27,6 +28,10 @@ export default {
     addPost() {
       postsService.addNewPost(this.post);
       this.$router.push("/posts");
+    },
+    resetForm() {
+      this.post.title = "";
+      this.post.text = "";
     }
   }
 };
