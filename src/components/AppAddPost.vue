@@ -1,13 +1,17 @@
 <template>
     <div>
         <h1>Add post</h1>
-        <form>
-            <div>Title: <input type="text" v-model="post.title" placeholder="title"/></div>
-            <div>Text: <input type="text" v-model="post.text" placeholder="text"/></div>
+        <form @submit.prevent="addPost">
+            <div>Title: <input type="text" v-model="post.title" placeholder="title" 
+            required minlength="2"/></div>
 
-            <div><button @click="addPost">Add post</button></div>
+            <div>Text: <input type="text" v-model="post.text" placeholder="text" 
+            required maxlength="300"/></div>
+
+            <div><button type="submit">Add post</button></div>
             <div><button @click.prevent="resetForm">Reset</button></div>
         </form>
+
     </div>
 </template>
 
