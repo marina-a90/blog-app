@@ -8,6 +8,14 @@ class HttpService {
   get(url) {
     return http.get(url);
   }
+
+  getID(url) {
+    return http.get(url);
+  }
+
+  post(url, body) {
+    return http.post(url, body);
+  }
 }
 
 export const httpService = new HttpService();

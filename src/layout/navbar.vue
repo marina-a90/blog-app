@@ -9,6 +9,11 @@
                             Posts
                         </router-link>
                     </li>
+                    <li class="nav-item active">
+                        <router-link to="/addPost">
+                            Add Post
+                        </router-link>
+                    </li>
                 </ul>
             </div>
         </nav>

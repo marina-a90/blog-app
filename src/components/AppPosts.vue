@@ -3,7 +3,7 @@
         <h1>Posts</h1>
         <div class="container" v-for="post in posts" :key="post.id">
             <h3>{{ post.title }}</h3>
-            <p>{{ post.text }}</p>
+            <router-link :to="`/posts/${post.id}`">View post</router-link>
         </div>
     </div>
 </template>

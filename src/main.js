@@ -7,12 +7,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import VueRouter from "vue-router";
 
 import AppPosts from "./components/AppPosts";
+import AppSinglePost from "./components/AppSinglePost";
+import AppAddPost from "./components/AppAddPost";
 
 Vue.use(VueRouter);
 
 Vue.config.productionTip = false;
 
-const routes = [{ path: "/posts", component: AppPosts }];
+const routes = [
+  { path: "/posts", component: AppPosts },
+  { path: "/posts/:id", component: AppSinglePost },
+  { path: "/addPost", component: AppAddPost }
+];
 
 const router = new VueRouter({
   routes: routes,
