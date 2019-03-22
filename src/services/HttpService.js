@@ -16,6 +16,10 @@ class HttpService {
   post(url, body) {
     return http.post(url, body);
   }
+
+  edit(url, body) {
+    return http.put(url, body);
+  }
 }
 
 export const httpService = new HttpService();

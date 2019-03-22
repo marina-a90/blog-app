@@ -17,7 +17,8 @@ Vue.config.productionTip = false;
 const routes = [
   { path: "/posts", component: AppPosts },
   { path: "/posts/:id", component: AppSinglePost },
-  { path: "/addPost", component: AppAddPost }
+  { path: "/addPost", component: AppAddPost },
+  { path: "/edit/:id", component: AppAddPost }
 ];
 
 const router = new VueRouter({

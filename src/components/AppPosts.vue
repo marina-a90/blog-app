@@ -4,6 +4,8 @@
         <div class="container" v-for="post in posts" :key="post.id">
             <h3>{{ post.title }}</h3>
             <router-link :to="`/posts/${post.id}`">View post</router-link>
+            <div><button><router-link :to="`/edit/${post.id}`">Edit</router-link></button></div>
+            <hr>
         </div>
     </div>
 </template>

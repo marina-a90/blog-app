@@ -12,6 +12,10 @@ class PostsService {
   addNewPost(post) {
     return httpService.post("/posts", post);
   }
+
+  edit(post) {
+    return httpService.edit(`/posts/${post.id}`, post);
+  }
 }
 
 export const postsService = new PostsService();
