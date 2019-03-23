@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>{{ post.title }}</h1>
-        <p>{{ post.createdAt }}</p>
+        <p>{{ post.createdAt | formatDate }}</p>
         <p>{{ post.text }}</p>
         <hr>
 
@@ -22,6 +22,7 @@
 <script>
 import { postsService } from "../services/PostsService";
 import AppAddComment from "./AppAddComment";
+import { formatDate } from "../mixins/DateMixin";
 
 export default {
 
@@ -30,6 +31,8 @@ export default {
   },
 
   props: ["comments"],
+
+  mixins: [formatDate],
 
   data() {
     return {

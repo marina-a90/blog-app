@@ -12,6 +12,8 @@ import AppAddPost from "./components/AppAddPost";
 
 Vue.use(VueRouter);
 
+Vue.use(require('vue-moment'));
+
 Vue.config.productionTip = false;
 
 const routes = [
