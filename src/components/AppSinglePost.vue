@@ -1,16 +1,35 @@
 <template>
     <div>
-        <div>single post</div>
         <h1>{{ post.title }}</h1>
         <p>{{ post.createdAt }}</p>
         <p>{{ post.text }}</p>
+        <hr>
+
+        <AppAddComment :comments="comments"></AppAddComment>
+
+        <p v-if="post.comments">There are {{ post.comments.length }} comments for this post</p>
+
+        <div>
+            <div class="container" v-for="comment in post.comments" :key="comment.id">
+                <h3>{{ comment.text }}</h3>
+                <hr>
+            </div>
+        </div>
+      
     </div>
 </template>
 
 <script>
 import { postsService } from "../services/PostsService";
+import AppAddComment from "./AppAddComment";
 
 export default {
+
+  components: {
+      AppAddComment
+  },
+
+  props: ["comments"],
 
   data() {
     return {
@@ -26,7 +45,8 @@ export default {
     } catch (error) {
       console.log(error);
     }
-  }
+  }, 
+  
 };
 </script>
 

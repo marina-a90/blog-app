@@ -2,11 +2,11 @@ import { httpService } from "./HttpService";
 
 class PostsService {
   getAllPosts() {
-    return httpService.get("/posts");
+    return httpService.get(`/posts?filter={"include":["comments"]}`);
   }
 
   getPost(id) {
-    return httpService.getID(`/posts/${id}`);
+    return httpService.getID(`/posts/${id}?filter={"include":["comments"]}`);
   }
 
   addNewPost(post) {
@@ -19,6 +19,10 @@ class PostsService {
 
   delete(id) {
     return httpService.delete(`/posts/${id}`);
+  }
+
+  addComment(postId, comment) {
+    return httpService.postComment(`/posts/${postId}/comments`, comment);
   }
 }
 

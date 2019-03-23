@@ -24,6 +24,10 @@ class HttpService {
   delete(url) {
     return http.delete(url);
   }
+
+  postComment(url, body) {
+    return http.post(url, body);
+  }
 }
 
 export const httpService = new HttpService();
