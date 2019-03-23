@@ -20,6 +20,10 @@ class HttpService {
   edit(url, body) {
     return http.put(url, body);
   }
+
+  delete(url) {
+    return http.delete(url);
+  }
 }
 
 export const httpService = new HttpService();

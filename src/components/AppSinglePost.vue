@@ -11,7 +11,6 @@
 import { postsService } from "../services/PostsService";
 
 export default {
-  props: ["posts"],
 
   data() {
     return {
@@ -24,7 +23,6 @@ export default {
     try {
       const { data } = await postsService.getPost(this.postId);
       this.post = data;
-      console.log(data);
     } catch (error) {
       console.log(error);
     }

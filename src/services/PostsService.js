@@ -16,6 +16,10 @@ class PostsService {
   edit(post) {
     return httpService.edit(`/posts/${post.id}`, post);
   }
+
+  delete(id) {
+    return httpService.delete(`/posts/${id}`);
+  }
 }
 
 export const postsService = new PostsService();
